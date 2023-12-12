@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 let outputMessage = ''
 const table = 5
 const headerMessage = `
@@ -13,3 +15,8 @@ for (let i = 0; i <= 10; i++) {
 outputMessage = headerMessage + outputMessage
 
 console.log(outputMessage)
+
+const outputPath = `outputs`
+
+fs.mkdirSync(outputPath, { recursive: true })
+fs.writeFileSync(`${outputPath}/table-${table}.txt`, outputMessage)
