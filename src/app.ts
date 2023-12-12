@@ -1,11 +1,15 @@
-let autputMessage = ''
+let outputMessage = ''
 const table = 5
 const headerMessage = `
 ===================================
             Tabla del ${table}      
-===================================
+===================================\n
 `
-console.log(headerMessage)
+
 for (let i = 0; i <= 10; i++) {
-    console.log(`${table} x ${i} = ${table * i}`)
+    outputMessage += `${table} x ${i} = ${table * i}\n`
 }
+
+outputMessage = headerMessage + outputMessage
+
+console.log(outputMessage)
